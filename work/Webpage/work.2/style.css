@@ -1,0 +1,62 @@
+.container{
+    display: flex;
+    width: 1800px;
+    height: 1000px;
+    background-color: aquamarine;
+}
+.mian1{
+
+    width: 900px;
+    height: 1000px;
+    background-color: black;
+    position: relative;
+    left: 0px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+.mian2{
+
+    width: 900px;
+    height: 1000px;
+    background-color: olive;
+    position: relative;
+    left: 900px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+.box1{
+    display:flex;
+    background-color: blue;
+    width: 150px;
+    height: 150px;
+}
+.box2{
+    display:flex;
+    background-color: salmon;
+    width: 150px;
+    height: 150px;
+}
+.box3{
+    display:flex;
+    background-color: brown;
+    width: 150px;
+    height: 150px;
+}
+.box4{
+    display:flex;
+    background-color: red;
+    width: 150px;
+    height: 150px;
+}
+.box5{
+    display:flex;
+    background-color: rebeccapurple;
+    width: 150px;
+    height: 150px;
+}
+.box6{
+    display:flex;
+    background-color: white;
+    width: 150px;
+    height: 150px;
+}
