@@ -1,0 +1,58 @@
+html
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <style>  
+    .tab-bar {  
+      display: flex;  
+      justify-content: space-between;  
+      padding: 10px;  
+    }  
+    .tab {  
+      cursor: pointer;  
+      padding: 10px;  
+      border: 1px solid #ccc;  
+      border-bottom: none;  
+    }  
+    .tab.active {  
+      background-color: #ccc;  
+    }  
+    .tab-content {  
+      display: none;  
+      padding: 10px;  
+    }   
+    .tab.active .tab-content {  
+      display: block;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <div class="tab-bar">  
+    <div class="tab" onclick="showTab(0)">Tab 1</div>  
+    <div class="tab" onclick="showTab(1)">Tab 2</div>  
+    <div class="tab" onclick="showTab(2)">Tab 3</div>  
+  </div>  
+  
+  <div id="tab1" class="tab-content">  
+    <p>这是 Tab 1 的内容。</p>  
+  </div>  
+  <div id="tab2" class="tab-content">  
+    <p>这是 Tab 2 的内容。</p>  
+  </div>  
+  <div id="tab3" class="tab-content">  
+    <p>这是 Tab 3 的内容。</p>  
+  </div>  
+  
+  <script>  
+    function showTab(tabIndex) {  
+      const tabs = document.getElementsByClassName("tab");  
+      const tabContents = document.getElementsByClassName("tab-content");  
+      for (let i = 0; i < tabContents.length; i++) {  
+        tabContents[i].style.display = "none";  
+      }  
+      tabs[tabIndex].classList.add("active");  
+      tabContents[tabIndex].style.display = "block";  
+    }  
+  </script>  
+</body>  
+</html>
