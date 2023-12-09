@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function animateWithTimeout() {  
+  console.log('开始动画');  
+  setTimeout(() => {  
+    console.log('动画完成');  
+  }, 2000);  
+}  
+animateWithTimeout();  
+  
+function animateWithPromise() {  
+  console.log('开始动画');  
+  new Promise((resolve) => {  
+    setTimeout(() => {  
+      console.log('动画进行中');  
+      resolve();  
+    }, 1000);  
+  }).then(() => {  
+    console.log('动画完成');  
+  });  
+}  
+animateWithPromise();  
+   
+async function animateWithAsync() {  
+  console.log('开始动画');  
+  await new Promise(resolve => setTimeout(resolve, 2000));  
+  console.log('动画完成');  
+}  
+animateWithAsync();
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const Promise = require('promise');  
+  
+  Promise.all = function(iterable) {  
+    return new Promise((resolve, reject) => {  
+      let values = [];  
+      let remaining = iterable.length;  
+      let errors = [];  
+    
+      iterable.forEach((promise, index) => {  
+        promise.then(result => {  
+          values[index] = result;  
+          remaining--;  
+          if (remaining === 0) {  
+            resolve(values);  
+          }  
+        }).catch(error => {  
+          errors.push(error);  
+          remaining--;  
+          if (remaining === 0) {  
+            reject(errors);  
+          }  
+        });  
+      });  
+    });  
+  };
+    </script>
+</body>
+</html>
